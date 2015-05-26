@@ -3,4 +3,4 @@ Poster for a MSc(CS) Project
 
 Templete: main.tex
 
-Idea: ./idea/*.docx
+Idea: `./idea/*.docx`
