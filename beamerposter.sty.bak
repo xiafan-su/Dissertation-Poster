@@ -1,5 +1,5 @@
-% Copyright 2007 by
-% Philippe Dreuw <dreuw@cs.rwth-aachen.de> and
+% Copyright 2007 by 
+% Philippe Dreuw <dreuw@cs.rwth-aachen.de> and 
 % Thomas Deselaers <deselaers@cs.rwth-aachen.de>
 % Slight modifications made in August 2009 by Nathaniel Johnston (nathaniel@nathanieljohnston.com)
 %
@@ -23,7 +23,7 @@
 \def\beamerposter@version{1.07}
 \def\beamerposter@date{2008/03/11}
 \def\beamerposter@msg{beamerposter: latex-beamer poster extension}
-\typeout{Package: \beamerposter@date. v.\beamerposter@version. \beamerposter@msg}
+\typeout{Package: \beamerposter@date. v.\beamerposter@version. \beamerposter@msg} 
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{beamerposter}[\beamerposter@date. v.\beamerposter@version. \beamerposter@msg]
@@ -46,7 +46,7 @@
     \setlength{\textheight}{88cm}
     \or
     %a0
-    \setlength{\paperwidth}{83.96cm}
+    \setlength{\paperwidth}{118.82cm}
     \setlength{\paperheight}{83.96cm}
     \setlength{\textwidth}{117.82cm}
     \setlength{\textheight}{82.96cm}
@@ -76,7 +76,7 @@
     \setlength{\textheight}{20.0cm}
     \or
     \customsizetrue
-    \fi
+    \fi    
   }{%
     \PackageWarning{beamerposter}{the input \val\ was incorrect and was ignored.}
   }%
@@ -90,7 +90,7 @@
     \portraittrue
     \or
     \portraitfalse
-    \fi
+    \fi    
   }{%
     \PackageWarning{beamerposter}{the input \val\ was incorrect and was ignored.}
   }%
@@ -149,13 +149,13 @@
   paperheight=\the\paperheight,
   hmargin=1cm,%
   vmargin=0cm,%
-  head=0.5cm, %
+  head=0.5cm, % 
   headsep=0pt,%
-  foot=0.5cm  %
+  foot=0.5cm  % 
 }
 
 %% scalable vector fonts
-\edef\fontSizeX{14.4}\edef\fontSizeY{18}
+\edef\fontSizeX{14.4}\edef\fontSizeY{18}   
 \FPupn{\resultscriptsizeX}{myfontscale fontSizeX * 2 round}
 \FPupn{\resultscriptsizeY}{myfontscale fontSizeY * 2 round}
 \renewcommand*{\tiny}{\fontsize{\resultscriptsizeX}{\resultscriptsizeY}\selectfont}
