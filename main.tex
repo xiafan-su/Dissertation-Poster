@@ -164,13 +164,13 @@ number of computational problems. Using a monadic sequencing combinator of parse
 the messy manipulation of nested tuples of results present in early work. Moreover, using
 monad comprehension notation makes parsers more compat and easy to read.
 
-The monad of parser can be expressed in a modular way in terms of two simpler monads. The
-immediate benefit is that the basic parser combinators no longer needs to be defined
-explicitly. Rather, they arise automatically as a special case of lifting monad operations
-from the base monad \textit{m} to a certain other monad parameterised over \textit{m}. This
-also means that, if we change the nature of parsers by modifying the base monad, then new
-combinators for the modified monad of parsers also arise automically via the lifting
-construction.
+% The monad of parser can be expressed in a modular way in terms of two simpler monads. The
+% immediate benefit is that the basic parser combinators no longer needs to be defined
+% explicitly. Rather, they arise automatically as a special case of lifting monad operations
+% from the base monad \textit{m} to a certain other monad parameterised over \textit{m}. This
+% also means that, if we change the nature of parsers by modifying the base monad, then new
+% combinators for the modified monad of parsers also arise automically via the lifting
+% construction.
 
 \textbf{Pacrat:}
 
@@ -203,6 +203,16 @@ construction.
 
 \begin{block}{Optimisation}
 \textbf{Parser}
+
+\begin{itemize}
+\item Lazy evaluation. Parser combinators will generates all possible results in each level
+of parse tree, lazy evaluation can enable the possibilty of ``parse by need'', which will
+save lots of memory and time and become much more efficient.
+\item Reduce backtracking. Backtracking is required when the parser encounter a failure,
+and then it may come back to the begining and try the other alternative rules.
+\item More specific rules. The parser will try the rules one by one. Try the most possible
+rules based on parsing context will help to find the correct result earlier.
+\end{itemize}
 
 \textbf{Pretty Printer}
 \begin{itemize}
