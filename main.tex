@@ -207,9 +207,10 @@ construction.
 \textbf{Pretty Printer}
 \begin{itemize}
 \item Algebra: Everything is based on a single concatenation operator that is associative.
-\item Expressiveness: Only five interfaces are given to users: text, nest, line, group, pretty
-\item Optimality: Optimal and Bounded
+\item Expressiveness: Not as expressive as Hugh's library, but it is enough for using.
+\item Optimality: Optimal and Bounded. It means that the lib can choose line breaks to avoid overflow whenever possible, and it's done in O(n).
 \end{itemize}
+
 
 \end{block}
 
@@ -272,24 +273,10 @@ factor      ::= nat | ( expr )
 
 \begin{block}{Conclusion}
 
-Nunc tempus venenatis facilisis. \textbf{Curabitur suscipit} consequat eros non porttitor. Sed a massa dolor, id ornare enim. Fusce quis massa dictum tortor \textbf{tincidunt mattis}. Donec quam est, lobortis quis pretium at, laoreet scelerisque lacus. Nam quis odio enim, in molestie libero. Vivamus cursus mi at \textit{nulla elementum sollicitudin}.
+In the world of Pretty Printer, Richard Bird put algebraic design on the map. John Hughes made pretty printer libraries a prime example of the algebraic approach. Then Philip Wadler made a lot improvement to Hughes's lib. The greatest homage is imitation, and here we have paid as much homage as we can to Hughes, Bird and Wadler.
 
 \end{block}
 
-%----------------------------------------------------------------------------------------
-%	ADDITIONAL INFORMATION
-%----------------------------------------------------------------------------------------
-
-\begin{block}{Additional Information}
-
-Maecenas ultricies feugiat velit non mattis. Fusce tempus arcu id ligula varius dictum.
-\begin{itemize}
-\item Curabitur pellentesque dignissim
-\item Eu facilisis est tempus quis
-\item Duis porta consequat lorem
-\end{itemize}
-
-\end{block}
 
 %----------------------------------------------------------------------------------------
 %	REFERENCES
