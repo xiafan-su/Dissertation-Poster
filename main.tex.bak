@@ -88,41 +88,36 @@
 \begin{column}{\onecolwid} % The first column
 
 %----------------------------------------------------------------------------------------
-%	OBJECTIVES
+%	The Tower of Babel
 %----------------------------------------------------------------------------------------
 
-\begin{alertblock}{Objectives}
+\begin{figure}
+\includegraphics[width=\linewidth]{img/babel.png}
+\caption{The Tower of Babel}
+\end{figure}
 
-Lorem ipsum dolor sit amet, consectetur, nunc tellus pulvinar tortor, commodo eleifend risus arcu sed odio:
-\begin{itemize}
-\item Mollis dignissim, magna augue tincidunt dolor, interdum vestibulum urna
-\item Sed aliquet luctus lectus, eget aliquet leo ullamcorper consequat. Vivamus eros sem, iaculis ut euismod non, sollicitudin vel orci.
-\item Nascetur ridiculus mus.
-\item Euismod non erat. Nam ultricies pellentesque nunc, ultrices volutpat nisl ultrices a.
-\end{itemize}
+%----------------------------------------------------------------------------------------
+%	MOTIVATION
+%----------------------------------------------------------------------------------------
 
-\end{alertblock}
+\begin{block}{Motivation}
+
+At HKU, the Programming Languages group is developing a new JVM-based compiler for functional languages called F2J. The overall goal of this project is to improve support for functional languages on the JVM, as currently existing compilation techniques have several limitations that limit the use of functional programming. 
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{img/bootstrapping.jpg}
+\caption{Bootstrapping}
+\end{figure}
+
+In order to make a selfhosting compiler, in other word, a \textbf{bootstrapped compiler} for F2J, we will need a parser combinators library. In this process, we could also build a combinators library for pretty printing with a similar approach, which is a reversed process of parsing.
+
+\end{block} 
 
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Introduction}
 
-Lorem ipsum dolor \textbf{sit amet}, consectetur adipiscing elit. Sed commodo molestie porta. Sed ultrices scelerisque sapien ac commodo. Donec ut volutpat elit. Sed laoreet accumsan mattis. Integer sapien tellus, auctor ac blandit eget, sollicitudin vitae lorem. Praesent dictum tempor pulvinar. Suspendisse potenti. Sed tincidunt varius ipsum, et porta nulla suscipit et. Etiam congue bibendum felis, ac dictum augue cursus a. \textbf{Donec} magna eros, iaculis sit amet placerat quis, laoreet id est. In ut orci purus, interdum ornare nibh. Pellentesque pulvinar, nibh ac malesuada accumsan, urna nunc convallis tortor, ac vehicula nulla tellus eget nulla. Nullam lectus tortor, \textit{consequat tempor hendrerit} quis, vestibulum in diam. Maecenas sed diam augue.
-
-This statement requires citation \cite{Smith:2012qr}.
-
-\end{block}
-
-%------------------------------------------------
-
-\begin{figure}
-\includegraphics[width=0.8\linewidth]{placeholder.jpg}
-\caption{Figure caption}
-\end{figure}
-
-%----------------------------------------------------------------------------------------
 
 \end{column} % End of the first column
 
@@ -138,25 +133,10 @@ This statement requires citation \cite{Smith:2012qr}.
 %	MATERIALS
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Materials}
+\begin{block}{Introduction}
 
-The following materials were required to complete the research:
-
-\begin{itemize}
-\item Curabitur pellentesque dignissim
-\item Eu facilisis est tempus quis
-\item Duis porta consequat lorem
-\item Eu facilisis est tempus quis
-\end{itemize}
-
-The materials were prepared according to the steps outlined below:
-
-\begin{enumerate}
-\item Curabitur pellentesque dignissim
-\item Eu facilisis est tempus quis
-\item Duis porta consequat lorem
-\item Curabitur pellentesque dignissim
-\end{enumerate}
+Parser combinators are a set of higher-order functions that accepts several parser as input and then return a parser as output. In this context, a parser is a function accepting strings as input and returning some structure as output, typically a parse tree or a set of indices representing locations in the string where parsing stopped successfully. Parser combinators enable a recursive descent parsing strategy that facilitates modular piecewise construction and testing.
+This parsing technique is called combinatory parsing. Parser and Pretty Printer combinators are an alternative to tools used in compiler constructions, such as lex, yacc or antlr. They have the advantage of being a library instead of a code generator tool.
 
 \end{block}
 
@@ -186,7 +166,7 @@ Lorem ipsum dolor \textbf{sit amet}, consectetur adipiscing elit. Sed laoreet ac
 %	IMPORTANT RESULT
 %----------------------------------------------------------------------------------------
 
-\begin{alertblock}{Important Result}
+\begin{alertblock}{Monadic}
 
 Lorem ipsum dolor \textbf{sit amet}, consectetur adipiscing elit. Sed commodo molestie porta. Sed ultrices scelerisque sapien ac commodo. Donec ut volutpat elit.
 
@@ -202,7 +182,7 @@ Lorem ipsum dolor \textbf{sit amet}, consectetur adipiscing elit. Sed commodo mo
 %	MATHEMATICAL SECTION
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Mathematical Section}
+\begin{block}{Optimisation}
 
 Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin. Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin.
 
@@ -236,7 +216,7 @@ Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sol
 %	RESULTS
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Results}
+\begin{block}{Case Study}
 
 \begin{figure}
 \includegraphics[width=0.8\linewidth]{placeholder.jpg}
