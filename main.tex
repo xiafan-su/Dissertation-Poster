@@ -25,6 +25,7 @@
 \documentclass[final]{beamer}
 
 \usepackage[scale=1.12]{beamerposter} % Use the beamerposter package for laying out the poster
+\usepackage{listings}
 
 \usetheme{confposter} % Use the confposter theme supplied with this template
 
@@ -223,6 +224,14 @@ construction.
 %----------------------------------------------------------------------------------------
 
 \begin{block}{Case Study}
+
+\textbf{ArithExpr}
+
+\begin{lstlisting}
+expr        ::= expr addop factor | factor
+operations  ::= + | - | * | /
+factor      ::= nat | ( expr )
+\end{lstlisting}
 
 \textbf{XML}
 \textbf{F2J}
