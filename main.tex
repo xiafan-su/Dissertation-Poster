@@ -34,6 +34,8 @@
 \setbeamercolor{block alerted body}{fg=black,bg=dblue!10} % Colors of the body of highlighted blocks
 % Many more colors are available for use in beamerthemeconfposter.sty
 
+\setbeamerfont{block body}{series=\rmfamily}
+
 %-----------------------------------------------------------
 % Define the column widths and overall poster size
 % To set effective sepwid, onecolwid and twocolwid values, first choose how many columns you want and how much separation you want between columns
@@ -102,7 +104,7 @@
 
 \begin{block}{Motivation}
 
-At HKU, the Programming Languages group is developing a new JVM-based compiler for functional languages called F2J. The overall goal of this project is to improve support for functional languages on the JVM, as currently existing compilation techniques have several limitations that limit the use of functional programming. 
+At HKU, the Programming Languages group is developing a new JVM-based compiler for functional languages called F2J. The overall goal of this project is to improve support for functional languages on the JVM, as currently existing compilation techniques have several limitations that limit the use of functional programming.
 
 \begin{figure}
 \includegraphics[width=0.8\linewidth]{img/bootstrapping.jpg}
@@ -111,7 +113,7 @@ At HKU, the Programming Languages group is developing a new JVM-based compiler f
 
 In order to make a selfhosting compiler, in other word, a \textbf{bootstrapped compiler} for F2J, we will need a parser combinators library. In this process, we could also build a combinators library for pretty printing with a similar approach, which is a reversed process of parsing.
 
-\end{block} 
+\end{block}
 
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
@@ -152,9 +154,22 @@ This parsing technique is called combinatory parsing. Parser and Pretty Printer 
 
 \begin{block}{Methods}
 
-\textbf{Algebra of programming:} 
+\textbf{Algebra of programming:}
 
 \textbf{Monadic:}
+
+Monad is an algebraic structure from machematics that provided useful for addressing a
+number of computational problems. Using a monadic sequencing combinator of parsers avoids
+the messy manipulation of nested tuples of results present in early work. Moreover, using
+monad comprehension notation makes parsers more compat and easy to read.
+
+The monad of parser can be expressed in a modular way in terms of two simpler monads. The
+immediate benefit is that the basic parser combinators no longer needs to be defined
+explicitly. Rather, they arise automatically as a special case of lifting monad operations
+from the base monad \textit{m} to a certain other monad parameterised over \textit{m}. This
+also means that, if we change the nature of parsers by modifying the base monad, then new
+combinators for the modified monad of parsers also arise automically via the lifting
+construction.
 
 \textbf{Pacrat:}
 
@@ -192,7 +207,7 @@ This parsing technique is called combinatory parsing. Parser and Pretty Printer 
 \begin{itemize}
 \item Algebra: Everything is based on a single concatenation operator that is associative.
 \item Expressiveness: Only five interfaces are given to users: text, nest, line, group, pretty
-\item Optimality: Optimal and Bounded 
+\item Optimality: Optimal and Bounded
 \end{itemize}
 
 \end{block}
