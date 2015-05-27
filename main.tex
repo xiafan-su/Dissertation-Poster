@@ -174,7 +174,6 @@ monad comprehension notation makes parsers more compat and easy to read.
 % combinators for the modified monad of parsers also arise automically via the lifting
 % construction.
 
-\textbf{Pacrat:}
 
 \end{block}
 
@@ -203,26 +202,13 @@ monad comprehension notation makes parsers more compat and easy to read.
 %	MATHEMATICAL SECTION
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Optimisation}
-\textbf{Parser}
+\begin{block}{Methods}
 
-\begin{itemize}
-\item Lazy evaluation. Parser combinators will generates all possible results in each level
-of parse tree, lazy evaluation can enable the possibilty of ``parse by need''.
-%, which will save lots of memory and time and become much more efficient.
-\item Reduce backtracking. Backtracking is required when the parser encounter a failure.
-% and then it may come back to the begining and try the other alternative rules.
-\item More specific rules. Try the most possible rules based on parsing context will help to find the correct result earlier.
-%The parser will try the rules one by one. 
-\end{itemize}
 
-\textbf{Pretty Printer}
-\begin{itemize}
-\item Algebra: Everything is based on a single concatenation operator that is associative.
-\item Expressiveness: Not as expressive as Hugh's library, but it is enough for using.
-\item Optimality: Optimal and Bounded. It means that the lib can choose line breaks to avoid overflow whenever possible, and it's done in O(n).
-\end{itemize}
-
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{img/monad.jpg}
+\caption{Bootstrapping}
+\end{figure}
 
 \end{block}
 
@@ -236,19 +222,27 @@ of parse tree, lazy evaluation can enable the possibilty of ``parse by need''.
 %	RESULTS
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Case Study}
+\begin{block}{Optimisation}
 
-\textbf{ArithExpr}
+\textbf{Parser}
+\begin{itemize}
+\item Lazy evaluation. Parser combinators will generates all possible results in each level
+of parse tree, lazy evaluation can enable the possibilty of ``parse by need''.
+%, which will save lots of memory and time and become much more efficient.
+\item Reduce backtracking. Backtracking is required when the parser encounter a failure.
+% and then it may come back to the begining and try the other alternative rules.
+\item More specific rules. Try the most possible rules based on parsing context will help to find the correct result earlier.
+%The parser will try the rules one by one.
+\end{itemize}
 
-% \begin{lstlisting}[frame=single]
-% expr        ::= expr operations factor | factor
-% operations  ::= + | - | * | /
-% factor      ::= nat | ( expr )
-% \end{lstlisting}
+\textbf{Pretty Printer}
+\begin{itemize}
+\item Algebra: Everything is based on a single concatenation operator that is associative.
+\item Expressiveness: Not as expressive as Hugh's library, but it is enough for using.
+\item Optimality: Optimal and Bounded. It means that the lib can choose line breaks to avoid overflow whenever possible, and it's done in O(n).
+\end{itemize}
 
-\textbf{XML}
-\textbf{F2J}
-\textbf{FWJava}
+
 
 
 %\begin{table}
@@ -279,15 +273,31 @@ of parse tree, lazy evaluation can enable the possibilty of ``parse by need''.
 
 \begin{column}{\onecolwid} % The third column
 
+
+\begin{block}{Case Study}
+
+\textbf{ArithExpr}
+% \begin{lstlisting}[frame=single]
+% expr        ::= expr operations factor | factor
+% operations  ::= + | - | * | /
+% factor      ::= nat | ( expr )
+% \end{lstlisting}
+\textbf{XML}
+\textbf{F2J}
+\textbf{FWJava}
+
+\end{block}
+
 %----------------------------------------------------------------------------------------
 %	CONCLUSION
 %----------------------------------------------------------------------------------------
+
 
 \begin{block}{Conclusion}
 
 In the world of Pretty Printer, Richard Bird put algebraic design on the map. John Hughes made pretty printer libraries a prime example of the algebraic approach. Then Philip Wadler made a lot improvement to Hughes's lib. The greatest homage is imitation, and here we have paid as much homage as we can to Hughes, Bird and Wadler.
 
-\end{block}
+
 
 
 %----------------------------------------------------------------------------------------
