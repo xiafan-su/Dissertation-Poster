@@ -24,7 +24,7 @@
 
 \documentclass[final]{beamer}
 
-\usepackage[scale=1.24]{beamerposter} % Use the beamerposter package for laying out the poster
+\usepackage[scale=1.12]{beamerposter} % Use the beamerposter package for laying out the poster
 
 \usetheme{confposter} % Use the confposter theme supplied with this template
 
@@ -63,11 +63,11 @@
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
 
-\title{Unnecessarily Complicated Research Title} % Poster title
+\title{Efficient Parser and Pretty Printer Combinators in F2J} % Poster title
 
-\author{John Smith, James Smith and Jane Smith} % Author(s)
+\author{Yuteng Zhong, Yi Li and Fan Xia} % Author(s)
 
-\institute{Department and University Name} % Institution(s)
+\institute{Department of Computer Science, The University of Hong Kong} % Institution(s)
 
 %----------------------------------------------------------------------------------------
 
