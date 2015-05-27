@@ -25,6 +25,7 @@
 \documentclass[final]{beamer}
 
 \usepackage[scale=1.12]{beamerposter} % Use the beamerposter package for laying out the poster
+\usepackage{listings}
 
 \usetheme{confposter} % Use the confposter theme supplied with this template
 
@@ -33,6 +34,8 @@
 \setbeamercolor{block alerted title}{fg=white,bg=dblue!70} % Colors of the highlighted block titles
 \setbeamercolor{block alerted body}{fg=black,bg=dblue!10} % Colors of the body of highlighted blocks
 % Many more colors are available for use in beamerthemeconfposter.sty
+
+\setbeamerfont{block body}{series=\rmfamily}
 
 %-----------------------------------------------------------
 % Define the column widths and overall poster size
@@ -102,7 +105,7 @@
 
 \begin{block}{Motivation}
 
-At HKU, the Programming Languages group is developing a new JVM-based compiler for functional languages called F2J. The overall goal of this project is to improve support for functional languages on the JVM, as currently existing compilation techniques have several limitations that limit the use of functional programming. 
+At HKU, the Programming Languages group is developing a new JVM-based compiler for functional languages called F2J. The overall goal of this project is to improve support for functional languages on the JVM, as currently existing compilation techniques have several limitations that limit the use of functional programming.
 
 \begin{figure}
 \includegraphics[width=0.8\linewidth]{img/bootstrapping.jpg}
@@ -111,7 +114,7 @@ At HKU, the Programming Languages group is developing a new JVM-based compiler f
 
 In order to make a selfhosting compiler, in other word, a \textbf{bootstrapped compiler} for F2J, we will need a parser combinators library. In this process, we could also build a combinators library for pretty printing with a similar approach, which is a reversed process of parsing.
 
-\end{block} 
+\end{block}
 
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
@@ -152,9 +155,22 @@ This parsing technique is called combinatory parsing. Parser and Pretty Printer 
 
 \begin{block}{Methods}
 
-\textbf{Algebra of programming:} 
+\textbf{Algebra of programming:}
 
 \textbf{Monadic:}
+
+Monad is an algebraic structure from machematics that provided useful for addressing a
+number of computational problems. Using a monadic sequencing combinator of parsers avoids
+the messy manipulation of nested tuples of results present in early work. Moreover, using
+monad comprehension notation makes parsers more compat and easy to read.
+
+The monad of parser can be expressed in a modular way in terms of two simpler monads. The
+immediate benefit is that the basic parser combinators no longer needs to be defined
+explicitly. Rather, they arise automatically as a special case of lifting monad operations
+from the base monad \textit{m} to a certain other monad parameterised over \textit{m}. This
+also means that, if we change the nature of parsers by modifying the base monad, then new
+combinators for the modified monad of parsers also arise automically via the lifting
+construction.
 
 \textbf{Pacrat:}
 
@@ -193,7 +209,8 @@ This parsing technique is called combinatory parsing. Parser and Pretty Printer 
 \item Algebra: Everything is based on a single concatenation operator that is associative.
 \item Expressiveness: Not as expressive as Hugh's library, but it is enough for using.
 \item Optimality: Optimal and Bounded. It means that the lib can choose line breaks to avoid overflow whenever possible, and it's done in O(n).
-\end{itemize} 
+\end{itemize}
+
 
 \end{block}
 
@@ -208,6 +225,14 @@ This parsing technique is called combinatory parsing. Parser and Pretty Printer 
 %----------------------------------------------------------------------------------------
 
 \begin{block}{Case Study}
+
+\textbf{ArithExpr}
+
+\begin{lstlisting}
+expr        ::= expr operations factor | factor
+operations  ::= + | - | * | /
+factor      ::= nat | ( expr )
+\end{lstlisting}
 
 \textbf{XML}
 \textbf{F2J}
@@ -248,7 +273,7 @@ This parsing technique is called combinatory parsing. Parser and Pretty Printer 
 
 \begin{block}{Conclusion}
 
-In the world of Pretty Printer, Richard Bird put algebraic design on the map. John Hughes made pretty printer libraries a prime example of the algebraic approach. Then Philip Wadler made a lot improvement to Hughes's lib. The greatest homage is imitation, and here we have paid as much homage as we can to Hughes, Bird and Wadler.  
+In the world of Pretty Printer, Richard Bird put algebraic design on the map. John Hughes made pretty printer libraries a prime example of the algebraic approach. Then Philip Wadler made a lot improvement to Hughes's lib. The greatest homage is imitation, and here we have paid as much homage as we can to Hughes, Bird and Wadler.
 
 \end{block}
 
