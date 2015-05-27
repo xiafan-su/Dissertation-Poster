@@ -79,7 +79,7 @@
 \addtobeamertemplate{block end}{}{\vspace*{2ex}} % White space under blocks
 \addtobeamertemplate{block alerted end}{}{\vspace*{2ex}} % White space under highlighted (alert) blocks
 
-\setlength{\belowcaptionskip}{2ex} % White space under figures
+\setlength{\belowcaptionskip}{1ex} % White space under figures
 \setlength\belowdisplayshortskip{2ex} % White space under equations
 
 \renewcommand{\raggedright}{\leftskip=0pt \rightskip=0pt plus 0cm}
@@ -186,10 +186,12 @@ monad comprehension notation makes parsers more compat and easy to read.
 %----------------------------------------------------------------------------------------
 %	IMPORTANT RESULT
 %----------------------------------------------------------------------------------------
+\begin{alertblock}{monad}
 
-\begin{alertblock}{Important Thing}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{img/monad.jpg}
 
-
+\end{figure}
 \end{alertblock}
 
 %----------------------------------------------------------------------------------------
@@ -202,13 +204,18 @@ monad comprehension notation makes parsers more compat and easy to read.
 %	MATHEMATICAL SECTION
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Methods}
+\begin{block}{Optimisation}
 
-
-\begin{figure}
-\includegraphics[width=0.9\linewidth]{img/monad.jpg}
-\caption{Bootstrapping}
-\end{figure}
+\textbf{Parser}
+\begin{itemize}
+\item Lazy evaluation. Parser combinators will generates all possible results in each level
+of parse tree, lazy evaluation can enable the possibilty of ''parse by need''.
+%, which will save lots of memory and time and become much more efficient.
+\item Reduce backtracking. Backtracking is required when the parser encounter a failure.
+% and then it may come back to the begining and try the other alternative rules.
+\item More specific rules. Try the most possible rules based on parsing context will help to find the correct result earlier.
+%The parser will try the rules one by one.
+\end{itemize}
 
 \end{block}
 
@@ -224,16 +231,7 @@ monad comprehension notation makes parsers more compat and easy to read.
 
 \begin{block}{Optimisation}
 
-\textbf{Parser}
-\begin{itemize}
-\item Lazy evaluation. Parser combinators will generates all possible results in each level
-of parse tree, lazy evaluation can enable the possibilty of ``parse by need''.
-%, which will save lots of memory and time and become much more efficient.
-\item Reduce backtracking. Backtracking is required when the parser encounter a failure.
-% and then it may come back to the begining and try the other alternative rules.
-\item More specific rules. Try the most possible rules based on parsing context will help to find the correct result earlier.
-%The parser will try the rules one by one.
-\end{itemize}
+
 
 \textbf{Pretty Printer}
 \begin{itemize}
@@ -298,7 +296,7 @@ of parse tree, lazy evaluation can enable the possibilty of ``parse by need''.
 In the world of Pretty Printer, Richard Bird put algebraic design on the map. John Hughes made pretty printer libraries a prime example of the algebraic approach. Then Philip Wadler made a lot improvement to Hughes's lib. The greatest homage is imitation, and here we have paid as much homage as we can to Hughes, Bird and Wadler.
 
 
-
+\end{block}
 
 %----------------------------------------------------------------------------------------
 %	REFERENCES
