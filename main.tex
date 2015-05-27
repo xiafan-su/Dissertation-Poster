@@ -82,6 +82,8 @@
 \setlength{\belowcaptionskip}{2ex} % White space under figures
 \setlength\belowdisplayshortskip{2ex} % White space under equations
 
+\renewcommand{\raggedright}{\leftskip=0pt \rightskip=0pt plus 0cm}
+
 \begin{frame}[t] % The whole poster is enclosed in one beamer frame
 
 \begin{columns}[t] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
@@ -95,7 +97,7 @@
 %----------------------------------------------------------------------------------------
 
 \begin{figure}
-\includegraphics[width=\linewidth]{img/babel.png}
+\includegraphics[width=\linewidth]{img/babellong.png}
 \caption{The Tower of Babel}
 \end{figure}
 
@@ -108,7 +110,7 @@
 At HKU, the Programming Languages group is developing a new JVM-based compiler for functional languages called F2J. The overall goal of this project is to improve support for functional languages on the JVM, as currently existing compilation techniques have several limitations that limit the use of functional programming.
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{img/bootstrapping.jpg}
+\includegraphics[width=0.9\linewidth]{img/bootstrapping.jpg}
 \caption{Bootstrapping}
 \end{figure}
 
@@ -206,12 +208,12 @@ monad comprehension notation makes parsers more compat and easy to read.
 
 \begin{itemize}
 \item Lazy evaluation. Parser combinators will generates all possible results in each level
-of parse tree, lazy evaluation can enable the possibilty of ``parse by need'', which will
-save lots of memory and time and become much more efficient.
-\item Reduce backtracking. Backtracking is required when the parser encounter a failure,
-and then it may come back to the begining and try the other alternative rules.
-\item More specific rules. The parser will try the rules one by one. Try the most possible
-rules based on parsing context will help to find the correct result earlier.
+of parse tree, lazy evaluation can enable the possibilty of ``parse by need''.
+%, which will save lots of memory and time and become much more efficient.
+\item Reduce backtracking. Backtracking is required when the parser encounter a failure.
+% and then it may come back to the begining and try the other alternative rules.
+\item More specific rules. Try the most possible rules based on parsing context will help to find the correct result earlier.
+%The parser will try the rules one by one. 
 \end{itemize}
 
 \textbf{Pretty Printer}
