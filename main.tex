@@ -240,7 +240,7 @@ Packrat parsing provides the simplicity, elegance and generality of the backtrac
 %----------------------------------------------------------------------------------------
 %	IMPORTANT RESULT
 %----------------------------------------------------------------------------------------
-\begin{alertblock}{monad}
+\begin{alertblock}{MONAD}
 
 \begin{figure}
 \includegraphics[width=0.8\linewidth]{img/monad.jpg}
@@ -262,13 +262,14 @@ Packrat parsing provides the simplicity, elegance and generality of the backtrac
 
 \textbf{Parser}
 \begin{itemize}
-\item Lazy evaluation. Parser combinators will generates all possible results in each level
+\item \textbf{Specific rules:} Try the most possible rules based on parsing context will help to find the correct result earlier.
+%The parser will try the rules one by one.
+\item \textbf{Lazy evaluation:} Parser combinators will generates all possible results in each level
 of parse tree, lazy evaluation can enable the possibilty of ''parse by need''.
 %, which will save lots of memory and time and become much more efficient.
-\item Reduce backtracking. Backtracking is required when the parser encounter a failure.
+\item \textbf{Reduce backtracking:} Backtracking is required when the parser encounter a failure.
 % and then it may come back to the begining and try the other alternative rules.
-\item More specific rules. Try the most possible rules based on parsing context will help to find the correct result earlier.
-%The parser will try the rules one by one.
+
 \end{itemize}
 
 \end{block}
@@ -289,9 +290,10 @@ of parse tree, lazy evaluation can enable the possibilty of ''parse by need''.
 
 \textbf{Pretty Printer}
 \begin{itemize}
-\item Algebra: Everything is based on a single concatenation operator that is associative.
-\item Expressiveness: Not as expressive as Hugh's library, but it is complete and enough for using.
-\item Optimality: Optimal and Bounded. It means that the lib can choose line breaks to avoid overflow whenever possible, and it's done in O(n).
+\item \textbf{Algebra:} Everything is based on a single concatenation operator that is associative.
+\item \textbf{Optimality:} Optimal and Bounded. It means that the lib can choose line breaks to avoid overflow whenever possible, and it's done in O(n).
+\item \textbf{Expressiveness:} Not as expressive as Hugh's library, but it is complete and enough for using.
+
 \end{itemize}
 
 
@@ -331,17 +333,10 @@ of parse tree, lazy evaluation can enable the possibilty of ''parse by need''.
 \textbf{Parser and Pretty Printer for F2J}
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{img/cs1.png}
+\includegraphics[width=\linewidth]{img/cs.jpg}
 
 \end{figure}
-\begin{figure}
-\includegraphics[width=0.8\linewidth]{img/cs2.png}
 
-\end{figure}
-\begin{figure}
-\includegraphics[width=0.8\linewidth]{img/cs3.png}
-
-\end{figure}
 
 
 \end{block}
@@ -353,7 +348,7 @@ of parse tree, lazy evaluation can enable the possibilty of ''parse by need''.
 
 \begin{block}{Conclusion}
 
-In the world of Pretty Printer, Richard Bird put algebraic design on the map. John Hughes made pretty printer libraries a prime example of the algebraic approach. Then Philip Wadler made a lot improvement to Hughes's lib. The greatest homage is imitation, and here we have paid as much homage as we can to Hughes, Bird and Wadler.
+ The greatest homage is imitation.
 
 
 \end{block}
@@ -367,24 +362,24 @@ In the world of Pretty Printer, Richard Bird put algebraic design on the map. Jo
 \setbeamercolor{block title}{fg=red,bg=white} % Change the block title color
 
 \begin{block}{Acknowledgements}
-
-\small{\rmfamily{Nam mollis tristique neque eu luctus. Suspendisse rutrum congue nisi sed convallis. Aenean id neque dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.}} \\
-
+\begin{itemize}
+\item \small{\rmfamily{This project is under supervision of Dr.Bruno C. d. S. Oliveira and supportted by The University of Hong Kong Programming Languages Group.}}
+\item \small{\rmfamily{Special thanks to Jeremy Bi, George Shi, Tomas, Emma, Ningning Xie, Linus Yang, Wexin Zhang and Yanlin.}} \\
+\end{itemize}
 \end{block}
 
 %----------------------------------------------------------------------------------------
 %	CONTACT INFORMATION
 %----------------------------------------------------------------------------------------
 
-\setbeamercolor{block alerted title}{fg=black,bg=norange} % Change the alert block title colors
-\setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
+%\setbeamercolor{block alerted title}{fg=black,bg=norange} % Change the alert block title colors
+%\setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
 
 \begin{alertblock}{Contact Information}
 
 \begin{itemize}
-\item Web: \href{http://www.university.edu/smithlab}{http://www.university.edu/smithlab}
-\item Email: \href{mailto:john@smith.com}{john@smith.com}
-\item Phone: +1 (000) 111 1111
+\item Web: https://github.com/hkuplg
+\item Email: xiafan@hku.hk
 \end{itemize}
 
 \end{alertblock}
