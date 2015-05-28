@@ -26,6 +26,9 @@
 
 \usepackage[scale=1.12]{beamerposter} % Use the beamerposter package for laying out the poster
 \usepackage{listings}
+\usepackage{fontspec}
+
+\setmainfont{Georgia}
 
 \usetheme{confposter} % Use the confposter theme supplied with this template
 
@@ -36,6 +39,7 @@
 % Many more colors are available for use in beamerthemeconfposter.sty
 
 \setbeamerfont{block body}{series=\rmfamily}
+%\setbeamerfont{block body}{series=\fontgeorgia}
 
 %-----------------------------------------------------------
 % Define the column widths and overall poster size
@@ -87,6 +91,13 @@
 \defverbatim[colored]\makeset{
 \begin{lstlisting}
 
+
+data PList[A]=Nil
+|Cons A PList[A];
+let rec recursive[A]
+(a:A):A=recursive[A]
+a;recursive[Int]1
+
 data PList[A] = Nil | Cons A (PList[A]); let rec recursive[A] (a : A) : A = recursive[A] a; recursive[Int] 1
 
 data PList[A]= 	Nil
@@ -99,6 +110,7 @@ recursive[Int] 1
 
 \end{lstlisting}
 }
+
 
 \begin{frame}[t] % The whole poster is enclosed in one beamer frame
 
@@ -114,7 +126,7 @@ recursive[Int] 1
 
 \begin{figure}
 \includegraphics[width=\linewidth]{img/babellong.png}
-\caption{The Tower of Babel}
+
 \end{figure}
 
 %----------------------------------------------------------------------------------------
@@ -123,21 +135,33 @@ recursive[Int] 1
 
 \begin{block}{Motivation}
 
-At HKU, the Programming Languages group is developing a new JVM-based compiler for functional languages called F2J. The overall goal of this project is to improve support for functional languages on the JVM, as currently existing compilation techniques have several limitations that limit the use of functional programming.
+At HKU, the Programming Languages group is developing a new JVM-based compiler for functional languages called F2J. 
 
 \begin{figure}
 \includegraphics[width=0.9\linewidth]{img/bootstrapping.jpg}
-\caption{Bootstrapping}
+
 \end{figure}
 
-In order to make a selfhosting compiler, in other word, a \textbf{bootstrapped compiler} for F2J, we will need a parser combinators library. In this process, we could also build a combinators library for pretty printing with a similar approach, which is a reversed process of parsing.
+In order to make a selfhosting compiler, in other word, a \textbf{bootstrapped compiler} for F2J, we will need a parser. In this process, we could also build a pretty printer, which is a reversed process of parsing.
 
 \end{block}
 
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
 %----------------------------------------------------------------------------------------
+\begin{block}{Introduction}
 
+%A parser is a software component that takes input data and builds a data structure. Then pretty printer takes the data structure and generates designed output.
+
+\textbf{Parsing and Printing:}
+
+\begin{figure}
+\includegraphics[width=0.75\linewidth]{img/parseprintershort.jpg}
+
+\end{figure}
+
+
+\end{block}
 
 
 \end{column} % End of the first column
@@ -156,8 +180,20 @@ In order to make a selfhosting compiler, in other word, a \textbf{bootstrapped c
 
 \begin{block}{Introduction}
 
-Parser combinators are a set of higher-order functions that accepts several parser as input and then return a parser as output. In this context, a parser is a function accepting strings as input and returning some structure as output, typically a parse tree or a set of indices representing locations in the string where parsing stopped successfully. Parser combinators enable a recursive descent parsing strategy that facilitates modular piecewise construction and testing.
-This parsing technique is called combinatory parsing. Parser and Pretty Printer combinators are an alternative to tools used in compiler constructions, such as lex, yacc or antlr. They have the advantage of being a library instead of a code generator tool.
+To parse a programming language, two common ways are used: \\
+\textbf{Code generators:}
+\begin{itemize}
+\item flex
+\item yacc
+\end{itemize}
+\textbf{Parser combinators:}
+\begin{itemize}
+\item planck in OCaml
+\item parsec in Haskell
+\end{itemize}
+
+%Parser combinators are a set of higher-order functions that accepts several parser as input and then return a parser as output. In this context, a parser is a %function accepting strings as input and returning some structure as output, typically a parse tree or a set of indices representing locations in the string where %parsing stopped successfully. Parser combinators enable a recursive descent parsing strategy that facilitates modular piecewise construction and testing.
+%This parsing technique is called combinatory parsing. Parser and Pretty Printer combinators are an alternative to tools used in compiler constructions, such as %lex, yacc or antlr. They have the advantage of being a library instead of a code generator tool.
 
 \end{block}
 
@@ -172,8 +208,6 @@ This parsing technique is called combinatory parsing. Parser and Pretty Printer 
 %----------------------------------------------------------------------------------------
 
 \begin{block}{Methods}
-
-\textbf{Algebra of programming:}
 
 \textbf{Monadic:}
 
@@ -256,7 +290,7 @@ of parse tree, lazy evaluation can enable the possibilty of ''parse by need''.
 \textbf{Pretty Printer}
 \begin{itemize}
 \item Algebra: Everything is based on a single concatenation operator that is associative.
-\item Expressiveness: Not as expressive as Hugh's library, but it is enough for using.
+\item Expressiveness: Not as expressive as Hugh's library, but it is complete and enough for using.
 \item Optimality: Optimal and Bounded. It means that the lib can choose line breaks to avoid overflow whenever possible, and it's done in O(n).
 \end{itemize}
 
@@ -294,17 +328,21 @@ of parse tree, lazy evaluation can enable the possibilty of ''parse by need''.
 
 \begin{block}{Case Study}
 
-\textbf{ArithExpr}
-% \begin{lstlisting}[frame=single]
-% expr        ::= expr operations factor | factor
-% operations  ::= + | - | * | /
-% factor      ::= nat | ( expr )
-% \end{lstlisting}
-\textbf{XML}
-\textbf{F2J}
-\textbf{FWJava}
+\textbf{Parser and Pretty Printer for F2J}
 
-\makeset
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{img/cs1.png}
+
+\end{figure}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{img/cs2.png}
+
+\end{figure}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{img/cs3.png}
+
+\end{figure}
+
 
 \end{block}
 
