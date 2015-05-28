@@ -182,6 +182,10 @@ number of computational problems. Using a monadic sequencing combinator of parse
 the messy manipulation of nested tuples of results present in early work. Moreover, using
 monad comprehension notation makes parsers more compat and easy to read.
 
+\textbf{Packrat:}
+
+Packrat parsing provides the simplicity, elegance and generality of the backtracking model but eliminates the risk of super-linear parse time, by saving all intermediate parsing results as they are computed and ensuring that no result is evaluated more than once.
+
 % The monad of parser can be expressed in a modular way in terms of two simpler monads. The
 % immediate benefit is that the basic parser combinators no longer needs to be defined
 % explicitly. Rather, they arise automatically as a special case of lifting monad operations
@@ -349,7 +353,7 @@ In the world of Pretty Printer, Richard Bird put algebraic design on the map. Jo
 
 \begin{center}
 \begin{tabular}{ccc}
-\includegraphics[width=0.4\linewidth]{logo.png} & \hfill & \includegraphics[width=0.4\linewidth]{logo.png}
+\includegraphics[width=0.8\linewidth]{img/hkulogo} & \hfill &
 \end{tabular}
 \end{center}
 
