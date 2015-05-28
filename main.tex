@@ -166,6 +166,10 @@ number of computational problems. Using a monadic sequencing combinator of parse
 the messy manipulation of nested tuples of results present in early work. Moreover, using
 monad comprehension notation makes parsers more compat and easy to read.
 
+\textbf{Packrat:}
+
+Packrat parsing provides the simplicity, elegance and generality of the backtracking model but eliminates the risk of super-linear parse time, by saving all intermediate parsing results as they are computed and ensuring that no result is evaluated more than once.
+
 % The monad of parser can be expressed in a modular way in terms of two simpler monads. The
 % immediate benefit is that the basic parser combinators no longer needs to be defined
 % explicitly. Rather, they arise automatically as a special case of lifting monad operations
