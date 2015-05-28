@@ -84,6 +84,22 @@
 
 \renewcommand{\raggedright}{\leftskip=0pt \rightskip=0pt plus 0cm}
 
+\defverbatim[colored]\makeset{
+\begin{lstlisting}
+
+data PList[A] = Nil | Cons A (PList[A]); let rec recursive[A] (a : A) : A = recursive[A] a; recursive[Int] 1
+
+data PList[A]= 	Nil
+            |   Cons A PList[A]
+;
+let rec recursive[A] (a: A): A =
+    recursive[A] a
+;
+recursive[Int] 1
+
+\end{lstlisting}
+}
+
 \begin{frame}[t] % The whole poster is enclosed in one beamer frame
 
 \begin{columns}[t] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
@@ -284,6 +300,8 @@ of parse tree, lazy evaluation can enable the possibilty of ''parse by need''.
 \textbf{F2J}
 \textbf{FWJava}
 
+\makeset
+
 \end{block}
 
 %----------------------------------------------------------------------------------------
@@ -298,17 +316,7 @@ In the world of Pretty Printer, Richard Bird put algebraic design on the map. Jo
 
 \end{block}
 
-%----------------------------------------------------------------------------------------
-%	REFERENCES
-%----------------------------------------------------------------------------------------
 
-\begin{block}{References}
-
-\nocite{*} % Insert publications even if they are not cited in the poster
-\small{\bibliographystyle{unsrt}
-\bibliography{sample}\vspace{0.75in}}
-
-\end{block}
 
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
