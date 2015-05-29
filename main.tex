@@ -28,6 +28,8 @@
 \usepackage{listings}
 \usepackage{fontspec}
 
+\usepackage{multirow}
+
 \setmainfont{Georgia}
 
 \usetheme{confposter} % Use the confposter theme supplied with this template
@@ -180,7 +182,7 @@ In order to make a selfhosting compiler, in other word, a \textbf{bootstrapped c
 
 \begin{block}{Introduction}
 
-To parse a programming language, two common ways are used: \\
+To parse a snippet of specific text, two common ways are used: \\
 \textbf{Code generators:}
 \begin{itemize}
 \item flex
@@ -192,9 +194,21 @@ To parse a programming language, two common ways are used: \\
 \item parsec in Haskell
 \end{itemize}
 
-\begin{figure}
-\includegraphics[height=0.6\linewidth]{img/blocks.png}
-\end{figure}
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Parsing Type}& \textbf{Pros}& \textbf{Cons}\\
+\hline
+\multirow{2}*{Generator}& Pervasive& Heavy config\\
+& Mature& Non-scalable\\
+\hline
+\multirow{3}*{Combinator}& Efficient& \\
+& Modular& Write code\\
+& Maintainable& \\
+\hline
+\end{tabular}
+\end{table}
 
 %Parser combinators are a set of higher-order functions that accepts several parser as input and then return a parser as output. In this context, a parser is a %function accepting strings as input and returning some structure as output, typically a parse tree or a set of indices representing locations in the string where %parsing stopped successfully. Parser combinators enable a recursive descent parsing strategy that facilitates modular piecewise construction and testing.
 %This parsing technique is called combinatory parsing. Parser and Pretty Printer combinators are an alternative to tools used in compiler constructions, such as %lex, yacc or antlr. They have the advantage of being a library instead of a code generator tool.
