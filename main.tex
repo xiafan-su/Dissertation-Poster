@@ -189,6 +189,7 @@ In order to make a selfhosting compiler, in other word, a \textbf{bootstrapped c
 \begin{block}{Introduction}
 
 To parse a snippet of specific text, two common ways are used: \\
+\vspace{10pt}
 \textbf{Code generators:}
 \begin{itemize}
 \item flex
@@ -199,6 +200,8 @@ To parse a snippet of specific text, two common ways are used: \\
 \item planck in OCaml
 \item parsec in Haskell
 \end{itemize}
+
+\vspace{36pt}
 
 \begin{table}
 \centering
@@ -236,9 +239,8 @@ To parse a snippet of specific text, two common ways are used: \\
 \textbf{Monadic:}
 
 \begin{itemize}
-
     \item Monad: an algebraic structure for maths
-    \item Monadic sequencing combinators of parsers
+    \item Monadic sequencing combinators of parsers\\
     \begin{itemize}
         \item Avoids manipulation of nested tuples of results in early work
         \item Makes parser more compat and easy to read
@@ -253,18 +255,16 @@ To parse a snippet of specific text, two common ways are used: \\
 % the messy manipulation of nested tuples of results present in early work. Moreover, using
 % monad comprehension notation makes parsers more compat and easy to read.
 
-\textbf{Packrat:}
+\vspace{20pt}
 
-% Packrat parsing provides the simplicity, elegance and generality of the backtracking model but eliminates the risk of super-linear parse time, by saving all intermediate parsing results as they are computed and ensuring that no result is evaluated more than once.
+\textbf{Packrat:}
 
 \begin{itemize}
     \item Backtracking model
-    \begin{itemize}
-        \item Simplicity, elegance and generality
-        \item Eliminates super-linear parse time
-        \item Saves all intermediate parsing results
-        \item No result is evaluated more than once
-    \end{itemize}
+    \item Simplicity, elegance and generality
+    \item Eliminates super-linear parse time
+    \item Saves all intermediate parsing results
+    \item No result is evaluated more than once
 \end{itemize}
 
 % The monad of parser can be expressed in a modular way in terms of two simpler monads. The
