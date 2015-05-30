@@ -137,7 +137,7 @@ recursive[Int] 1
 
 \begin{block}{Motivation}
 
-At HKU, the Programming Languages group is developing a new JVM-based compiler for functional languages called F2J. 
+At HKU, the Programming Languages group is developing a new JVM-based compiler for functional languages called F2J.
 
 \begin{figure}
 \includegraphics[width=0.9\linewidth]{img/bootstrapping.jpg}
@@ -159,7 +159,6 @@ In order to make a selfhosting compiler, in other word, a \textbf{bootstrapped c
 
 \begin{figure}
 \includegraphics[width=0.75\linewidth]{img/parseprintershort.jpg}
-
 \end{figure}
 
 
@@ -229,10 +228,23 @@ To parse a snippet of specific text, two common ways are used: \\
 
 \textbf{Monadic:}
 
-Monad is an algebraic structure from machematics that provided useful for addressing a
-number of computational problems. Using a monadic sequencing combinator of parsers avoids
-the messy manipulation of nested tuples of results present in early work. Moreover, using
-monad comprehension notation makes parsers more compat and easy to read.
+\begin{itemize}
+
+\item Monad: an algebraic structure for machematics
+\item Monadic sequencing combinators of parsers
+\begin{itemize}
+\item Avoids manipulation of nested tuples of results in early work
+\item Makes parser more compat and easy to read
+\item One monadic parser -> Two simpler monads
+\end{itemize}
+\item Easy to change
+
+\end{itemize}
+
+% Monad is an algebraic structure from machematics that provided useful for addressing a
+% number of computational problems. Using a monadic sequencing combinator of parsers avoids
+% the messy manipulation of nested tuples of results present in early work. Moreover, using
+% monad comprehension notation makes parsers more compat and easy to read.
 
 \textbf{Packrat:}
 
