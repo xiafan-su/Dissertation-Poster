@@ -26,11 +26,16 @@
 
 \usepackage[scale=1.12]{beamerposter} % Use the beamerposter package for laying out the poster
 \usepackage{listings}
-\usepackage{fontspec}
 
 \usepackage{multirow}
+\usepackage{helvet}
 
-\setmainfont{Georgia}
+% \usefonttheme{professionalfonts}
+\usefonttheme{serif}     % Font theme: serif
+\usepackage{fontspec}
+\setmainfont{Helvetica Neue}
+\setromanfont{Palatino}
+\usefonttheme{structuresmallcapsserif}
 
 \usetheme{confposter} % Use the confposter theme supplied with this template
 
@@ -40,8 +45,10 @@
 \setbeamercolor{block alerted body}{fg=black,bg=dblue!10} % Colors of the body of highlighted blocks
 % Many more colors are available for use in beamerthemeconfposter.sty
 
-\setbeamerfont{block body}{series=\rmfamily}
-%\setbeamerfont{block body}{series=\fontgeorgia}
+% \setbeamerfont{block body}{series=\rmfamily}
+\setbeamerfont{block body}{family*=pplx,size=\small}
+\setbeamerfont{frametitle}{family*=pplx}
+\setbeamerfont{institute}{family*=pplx}
 
 %-----------------------------------------------------------
 % Define the column widths and overall poster size
@@ -76,7 +83,7 @@
 
 \author{Yuteng Zhong, Yi Li and Fan Xia} % Author(s)
 
-\institute{Department of Computer Science, The University of Hong Kong} % Institution(s)
+\institute{\rmfamily Department of Computer Science, The University of Hong Kong} % Institution(s)
 
 %----------------------------------------------------------------------------------------
 
@@ -230,14 +237,14 @@ To parse a snippet of specific text, two common ways are used: \\
 
 \begin{itemize}
 
-\item Monad: an algebraic structure for machematics
-\item Monadic sequencing combinators of parsers
-\begin{itemize}
-\item Avoids manipulation of nested tuples of results in early work
-\item Makes parser more compat and easy to read
-\item One monadic parser -> Two simpler monads
-\end{itemize}
-\item Easy to change
+    \item Monad: an algebraic structure for maths
+    \item Monadic sequencing combinators of parsers
+    \begin{itemize}
+        \item Avoids manipulation of nested tuples of results in early work
+        \item Makes parser more compat and easy to read
+        \item One monadic parser can be expressed as Two simpler monads
+    \end{itemize}
+    \item Easy to change
 
 \end{itemize}
 
@@ -248,7 +255,17 @@ To parse a snippet of specific text, two common ways are used: \\
 
 \textbf{Packrat:}
 
-Packrat parsing provides the simplicity, elegance and generality of the backtracking model but eliminates the risk of super-linear parse time, by saving all intermediate parsing results as they are computed and ensuring that no result is evaluated more than once.
+% Packrat parsing provides the simplicity, elegance and generality of the backtracking model but eliminates the risk of super-linear parse time, by saving all intermediate parsing results as they are computed and ensuring that no result is evaluated more than once.
+
+\begin{itemize}
+    \item Backtracking model
+    \begin{itemize}
+        \item Simplicity, elegance and generality
+        \item Eliminates super-linear parse time
+        \item Saves all intermediate parsing results
+        \item No result is evaluated more than once
+    \end{itemize}
+\end{itemize}
 
 % The monad of parser can be expressed in a modular way in terms of two simpler monads. The
 % immediate benefit is that the basic parser combinators no longer needs to be defined
@@ -295,10 +312,10 @@ Packrat parsing provides the simplicity, elegance and generality of the backtrac
 \item \textbf{Specific rules:} Try the most possible rules based on parsing context will help to find the correct result earlier.
 %The parser will try the rules one by one.
 \item \textbf{Lazy evaluation:} Parser combinators will generates all possible results in each level
-of parse tree, lazy evaluation can enable the possibilty of ``parse by need''.
-%, which will save lots of memory and time and become much more efficient.
+of parse tree, lazy evaluation can enable the possibilty of ``parse by need'', which will save lots of memory and time and become much more efficient.
 \item \textbf{Reduce backtracking:} Backtracking is required when the parser encounter a failure.
 % and then it may come back to the begining and try the other alternative rules.
+Try reuse the previous parse result will help to improve performance.
 
 \end{itemize}
 
@@ -393,8 +410,12 @@ of parse tree, lazy evaluation can enable the possibilty of ``parse by need''.
 
 \begin{block}{Acknowledgements}
 \begin{itemize}
-\item \small{\rmfamily{This project is under supervision of Dr.Bruno C. d. S. Oliveira and supportted by The University of Hong Kong Programming Languages Group.}}
-\item \small{\rmfamily{Special thanks to Jeremy Bi, George Shi, Tomas, Emma, Ningning Xie, Linus Yang, Wexin Zhang and Yanlin.}} \\
+% \item \small{\rmfamily{This project is under supervision of Dr.Bruno C. d. S. Oliveira and supportted by The University of Hong Kong Programming Languages Group.}}
+% \item \small{\rmfamily{Special thanks to Jeremy Bi, George Shi, Tomas, Emma, Ningning Xie, Linus Yang, Wexin Zhang and Yanlin.}} \\
+
+\item \footnotesize{This project is under supervision of Dr.Bruno C. d. S. Oliveira and supportted by The University of Hong Kong Programming Languages Group.}
+\item \footnotesize{Special thanks to Jeremy Bi, George Shi, Tomas, Emma, Ningning Xie, Linus Yang, Wexin Zhang and Yanlin.}
+\\
 \end{itemize}
 \end{block}
 
